@@ -34,7 +34,7 @@ jobs:
         run: npm run build
         env:
           # This allows you to use your API key during the build if needed
-          VITE_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          VITE_API_KEY: ${{ secrets.AIzaSyBluQEeAMXEgOzroPgy5xxqGYWv12dW1tI }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
