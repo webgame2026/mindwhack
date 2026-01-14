@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Button from './Button';
-import { Sparkles, Download, CheckCircle2, X, Smartphone, Share } from 'lucide-react';
+import { Sparkles, Download, CheckCircle2, X, Smartphone, Share, Facebook, UserCheck } from 'lucide-react';
 
 interface EntryPageProps {
   onEnter: () => void;
