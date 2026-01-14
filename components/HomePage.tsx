@@ -26,7 +26,7 @@ const HomePage: React.FC<HomePageProps> = ({ stats, featuredLevel, onPlayFeature
               MASTER THE <br/> <span className="gradient-text">WHACK.</span>
             </h1>
             <p className="text-slate-600 dark:text-slate-400 text-xl font-medium max-w-lg mx-auto md:mx-0 leading-relaxed">
-              Craft impossible challenges or dominate the leaderboard. Join <span className="text-purple-600 dark:text-pink-400 font-bold">{stats.levelsCreated}</span> level creators worldwide.
+              Craft impossible challenges or dominate the leaderboard. Join <span className="text-purple-600 dark:text-pink-400 font-bold">{stats.levelsCreated}</span> 
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-6 pt-4">
@@ -152,6 +152,23 @@ const HomePage: React.FC<HomePageProps> = ({ stats, featuredLevel, onPlayFeature
          </div>
       </section>
     </div>
+    <a
+  href="https://www.facebook.com/riajul.daian.arpon"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{
+    padding: "10px 16px",
+    backgroundColor: "#1877f2",
+    color: "#fff",
+    borderRadius: "6px",
+    textDecoration: "none",
+    fontWeight: "bold",
+    display: "inline-block",
+  }}
+>
+  Facebook
+</a>
+
   );
 };
 
