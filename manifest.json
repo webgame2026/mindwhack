@@ -1,23 +1,20 @@
 {
   "name": "MindWhack UGC",
   "short_name": "MindWhack",
-  "description": "Creative Whack-A-Target Brainstorming Arena",
-  "start_url": "./index.html",
+  "start_url": "/mindwhack/",
   "display": "standalone",
   "background_color": "#020617",
   "theme_color": "#020617",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/mindwhack/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "/icon-512.png",
+      "src": "/mindwhack/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
   ]
 }
