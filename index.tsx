@@ -33,8 +33,9 @@ if (rootElement) {
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(err => {
-      console.debug('ServiceWorker registration failed: ', err);
-    });
+    navigator.serviceWorker
+      .register('/mindwhack/sw.js')
+      .then(() => console.log('Service Worker registered'))
+      .catch(err => console.error('ServiceWorker registration failed:', err));
   });
 }
