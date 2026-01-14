@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "mindwhack-ugc",
   "private": true,
   "version": "1.0.0",
@@ -13,7 +12,8 @@
     "@google/genai": "^1.35.0",
     "lucide-react": "^0.562.0",
     "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "react-dom": "^19.2.3",
+    "@supabase/supabase-js": "^2.54.0"
   },
   "devDependencies": {
     "@types/react": "^19.2.3",
@@ -23,9 +23,3 @@
     "vite": "^5.1.4"
   }
 }
-=======
-  "dependencies": {
-    "@supabase/supabase-js": "^2.54.0"
-  }
-}
->>>>>>> 7acecce858cd554d18367f7db8fa56552f3f03f9
