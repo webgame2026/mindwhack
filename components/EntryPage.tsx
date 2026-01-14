@@ -60,6 +60,11 @@ const EntryPage: React.FC<EntryPageProps> = ({ onEnter }) => {
 
   const showPrompt = !isInstalled && !isDismissed && (deferredPrompt || (isSafari && !isInstalled));
 
+const handleDevClick = () => {
+  window.open('https://facebook.com', '_blank');
+};
+
+  
   return (
     <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-6 overflow-hidden bg-[#020617]">
       {/* Background Blobs */}
