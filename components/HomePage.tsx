@@ -152,22 +152,7 @@ const HomePage: React.FC<HomePageProps> = ({ stats, featuredLevel, onPlayFeature
          </div>
       </section>
     </div>
-    <a
-  href="https://www.facebook.com/riajul.daian.arpon"
-  target="_blank"
-  rel="noopener noreferrer"
-  style={{
-    padding: "10px 16px",
-    backgroundColor: "#1877f2",
-    color: "#fff",
-    borderRadius: "6px",
-    textDecoration: "none",
-    fontWeight: "bold",
-    display: "inline-block",
-  }}
->
-  Facebook
-</a>
+  
 
   );
 };
