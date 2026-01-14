@@ -1,7 +1,8 @@
 {
   "name": "MindWhack UGC",
   "short_name": "MindWhack",
-  "start_url": "/",
+  "description": "Creative Whack-A-Target Brainstorming Arena",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#020617",
   "theme_color": "#020617",
