@@ -133,6 +133,19 @@ const EntryPage: React.FC<EntryPageProps> = ({ onEnter }) => {
             </Button>
           </div>
 
+           <button 
+            onClick={handleDevClick}
+            className="group flex items-center gap-3 px-8 py-4 glass border-blue-500/20 hover:border-blue-500/50 rounded-full transition-all active:scale-95 hover:bg-blue-600/10 shadow-lg"
+          >
+            <div className="p-2 bg-blue-600 rounded-lg text-white group-hover:rotate-12 transition-transform shadow-blue-500/20 shadow-lg">
+              <Facebook size={18} fill="currentColor" />
+            </div>
+            <div className="text-left">
+              <div className="text-[8px] font-black uppercase tracking-widest text-slate-500 opacity-70">Developer</div>
+              <div className="text-sm font-black text-blue-400 uppercase tracking-tighter">Riajul Daian Arpon</div>
+            </div>
+          </button>
+          
           {isInstalled && (
              <div className="flex items-center gap-2 text-fuchsia-500/60 font-black uppercase tracking-widest text-[10px] animate-in fade-in duration-1000">
                <CheckCircle2 size={12} /> App Installed & Synced
