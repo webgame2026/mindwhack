@@ -90,16 +90,16 @@ const LevelEditor: React.FC<LevelEditorProps> = ({ onSave, onCancel }) => {
             <ChevronLeft size={24} className="text-blue-400" />
           </button>
           <div>
-            <h2 className="text-2xl sm:text-3xl font-black gradient-text italic tracking-tighter uppercase">Workshop<span className="text-white not-italic">🏢</span></h2>
+            <h2 className="text-2xl sm:text-3xl font-black gradient-text italic tracking-tighter uppercase">Workshop<span className="text-white not-italic"></span></h2>
             <p className="text-slate-350 text-[8px] font-black uppercase tracking-[0.3em] mt-1">Experimental UGC </p>
         
         </div>
         <div className="flex gap-3">
           <Button onClick={onCancel} variant="glass" size="sm" className="hidden sm:flex rounded-full">
             <X size={15} className="mr-1" /> Discard
-          </Button></div>
-          <Button onClick={handlePublish} variant="primary" size="sm" className="rounded-full px-7" disabled={!name || !logic}>
-            <Save size={10} className="mr-1" /> Publish
+          </Button></div></div></div>
+          <Button onClick={handlePublish} variant="primary" size="sm" className="rounded-full px-5" disabled={!name || !logic}>
+            <Save size={6} className="mr-1" /> Publish
           </Button>
         </div>
       </div>
