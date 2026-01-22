@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { GameLevel, LevelLogic, TargetType, GameType, BoardTheme, MoodProfile } from '../types';
 import Button from './Button';
@@ -74,7 +73,6 @@ const LevelEditor: React.FC<LevelEditorProps> = ({ onSave, onCancel }) => {
     onSave(newLevel);
   };
 
-  // Fixed logic.gridSize error: using local state variable gridSize instead
   const difficultyScore = logic ? Math.round(
     ((1500 - logic.spawnInterval) / 100) + 
     ((1200 - logic.activeDuration) / 100) + 
@@ -83,28 +81,29 @@ const LevelEditor: React.FC<LevelEditorProps> = ({ onSave, onCancel }) => {
   ) : 0;
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-4 sm:p-8 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-32">
-      <div className="flex items-center justify-between mb-8 sm:mb-12">
-        <div className="flex items-center gap-4">
-          <button onClick={onCancel} className="p-3 glass rounded-2xl hover:bg-white/10 active:scale-90 transition-all sm:hidden">
-            <ChevronLeft size={24} className="text-blue-400" />
+    <div className="w-full max-w-7xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500 pb-32">
+      {/* STICKY HEADER */}
+      <div className="sticky top-0 z-40 bg-white/80 dark:bg-[#020617]/80 backdrop-blur-xl border-b border-black/5 dark:border-white/10 px-4 sm:px-8 py-4 sm:py-6 mb-8 flex items-center justify-between">
+        <div className="flex items-center gap-3 sm:gap-4">
+          <button onClick={onCancel} className="p-2 sm:p-3 glass rounded-2xl hover:bg-white/10 active:scale-90 transition-all">
+            <ChevronLeft size={20} className="text-blue-400" />
           </button>
           <div>
-            <h2 className="text-3xl sm:text-5xl font-black gradient-text italic tracking-tighter uppercase">Workshop<span className="text-white not-italic">Labs</span></h2>
-            <p className="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] mt-1">Experimental UGC Construction Toolset</p>
+            <h2 className="text-xl sm:text-4xl font-black gradient-text italic tracking-tighter uppercase leading-none">Workshop<span className="text-slate-900 dark:text-white not-italic">Labs</span></h2>
+            <p className="hidden sm:block text-slate-400 text-[8px] font-black uppercase tracking-[0.3em] mt-1">UGC Construction Toolset</p>
           </div>
         </div>
-        <div className="flex gap-3">
-          <Button onClick={onCancel} variant="glass" size="sm" className="hidden sm:flex rounded-full">
-            <X size={20} className="mr-1" /> Discard
+        <div className="flex gap-2 sm:gap-3">
+          <Button onClick={onCancel} variant="glass" size="sm" className="hidden sm:flex rounded-full px-4 text-xs">
+            <X size={16} className="mr-1" /> Discard
           </Button>
-          <Button onClick={handlePublish} variant="primary" size="sm" className="rounded-full px-8" disabled={!name || !logic}>
-            <Save size={20} className="mr-1" /> Publish
+          <Button onClick={handlePublish} variant="primary" size="sm" className="rounded-full px-5 sm:px-8 text-xs sm:text-sm" disabled={!name || !logic}>
+            <Save size={18} className="mr-1.5" /> Publish
           </Button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div className="px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         {/* Left Column: Input & AI */}
         <div className="lg:col-span-4 space-y-6">
           <section className="glass p-6 sm:p-8 rounded-[2.5rem] border-white/10 shadow-2xl space-y-6 relative overflow-hidden">
@@ -198,11 +197,11 @@ const LevelEditor: React.FC<LevelEditorProps> = ({ onSave, onCancel }) => {
 
         {/* Center: Live Laboratory View */}
         <div className="lg:col-span-5 space-y-6">
-          <section className="glass p-2 sm:p-2 rounded-[3.5rem] border-white/10 shadow-[0_40px_80px_rgba(0,0,0,0.5)] aspect-square relative overflow-hidden group">
+          <section className="glass p-2 rounded-[3.5rem] border-white/10 shadow-[0_40px_80px_rgba(0,0,0,0.5)] aspect-square relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 pointer-events-none" />
-            <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20">
-               <div className="px-6 py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-[10px] font-black uppercase tracking-[0.4em] text-white flex items-center gap-3">
-                 <Binary size={14} className="text-blue-400" /> Tactile Preview
+            <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20 w-full flex justify-center px-4">
+               <div className="px-6 py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-[10px] font-black uppercase tracking-[0.4em] text-white flex items-center gap-3 truncate max-w-full">
+                 <Binary size={14} className="text-blue-400 flex-shrink-0" /> Tactile Preview
                </div>
             </div>
 
@@ -228,11 +227,11 @@ const LevelEditor: React.FC<LevelEditorProps> = ({ onSave, onCancel }) => {
                </div>
             </div>
 
-            <div className="absolute bottom-8 left-0 right-0 px-8 z-20">
-               <div className="flex justify-center gap-2">
-                  <button onClick={() => setActiveTab('visuals')} className={`px-6 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${activeTab === 'visuals' ? 'bg-blue-600 text-white' : 'bg-black/40 text-slate-400 hover:text-white'}`}>Visuals</button>
-                  <button onClick={() => setActiveTab('logic')} className={`px-6 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${activeTab === 'logic' ? 'bg-blue-600 text-white' : 'bg-black/40 text-slate-400 hover:text-white'}`}>Timing</button>
-                  <button onClick={() => setActiveTab('targets')} className={`px-6 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${activeTab === 'targets' ? 'bg-blue-600 text-white' : 'bg-black/40 text-slate-400 hover:text-white'}`}>Targets</button>
+            <div className="absolute bottom-8 left-0 right-0 px-4 sm:px-8 z-20">
+               <div className="flex justify-center gap-1 sm:gap-2">
+                  <button onClick={() => setActiveTab('visuals')} className={`flex-1 sm:flex-none px-4 sm:px-6 py-3 rounded-2xl text-[9px] sm:text-[10px] font-black uppercase tracking-widest transition-all ${activeTab === 'visuals' ? 'bg-blue-600 text-white' : 'bg-black/40 text-slate-400 hover:text-white'}`}>Visuals</button>
+                  <button onClick={() => setActiveTab('logic')} className={`flex-1 sm:flex-none px-4 sm:px-6 py-3 rounded-2xl text-[9px] sm:text-[10px] font-black uppercase tracking-widest transition-all ${activeTab === 'logic' ? 'bg-blue-600 text-white' : 'bg-black/40 text-slate-400 hover:text-white'}`}>Timing</button>
+                  <button onClick={() => setActiveTab('targets')} className={`flex-1 sm:flex-none px-4 sm:px-6 py-3 rounded-2xl text-[9px] sm:text-[10px] font-black uppercase tracking-widest transition-all ${activeTab === 'targets' ? 'bg-blue-600 text-white' : 'bg-black/40 text-slate-400 hover:text-white'}`}>Targets</button>
                </div>
             </div>
           </section>
