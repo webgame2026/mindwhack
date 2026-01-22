@@ -85,21 +85,21 @@ const LevelEditor: React.FC<LevelEditorProps> = ({ onSave, onCancel }) => {
   return (
     <div className="w-full max-w-7xl mx-auto p-4 sm:p-8 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-32">
       <div className="flex items-center justify-between mb-8 sm:mb-12">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <button onClick={onCancel} className="p-3 glass rounded-2xl hover:bg-white/10 active:scale-90 transition-all sm:hidden">
             <ChevronLeft size={24} className="text-blue-400" />
           </button>
           <div>
-            <h2 className="text-2xl sm:text-3xl font-black gradient-text italic tracking-tighter uppercase">W-S<span className="text-white not-italic">⛽</span></h2>
-            <p className="text-slate-400 text-[8px] font-black uppercase tracking-[0.3em] mt-1">Experimental UGC </p>
-        
+            <h2 className="text-3xl sm:text-5xl font-black gradient-text italic tracking-tighter uppercase">Workshop<span className="text-white not-italic">Labs</span></h2>
+            <p className="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] mt-1">Experimental UGC Construction Toolset</p>
+          </div>
         </div>
         <div className="flex gap-3">
           <Button onClick={onCancel} variant="glass" size="sm" className="hidden sm:flex rounded-full">
-            <X size={15} className="mr-1" /> Discard
+            <X size={20} className="mr-1" /> Discard
           </Button>
-          <Button onClick={handlePublish} variant="primary" size="sm" className="rounded-full px-6" disabled={!name || !logic}>
-            <Save size={9} className="mr-1" /> Publish
+          <Button onClick={handlePublish} variant="primary" size="sm" className="rounded-full px-8" disabled={!name || !logic}>
+            <Save size={20} className="mr-1" /> Publish
           </Button>
         </div>
       </div>
