@@ -99,8 +99,8 @@ const LevelEditor: React.FC<LevelEditorProps> = ({ onSave, onCancel }) => {
           </Button>
           </div>
           </div>
-          <Button onClick={handlePublish} variant="primary" size="xs" className="rounded-full px-4 sm:px-6 text-xs sm:text-sm" disabled={!name || !logic}>
-            <Save size={09} className="mr-1.5" /> Publish
+          <Button onClick={handlePublish} variant="primary" size="sm" className="rounded-full px-5 sm:px-7 text-xs sm:text-sm" disabled={!name || !logic}>
+            <Save size={10} className="mr-1.5" /> Publish
           </Button>
         </div>
       </div>
