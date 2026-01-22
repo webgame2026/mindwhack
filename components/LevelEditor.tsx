@@ -89,16 +89,18 @@ const LevelEditor: React.FC<LevelEditorProps> = ({ onSave, onCancel }) => {
             <ChevronLeft size={20} className="text-blue-400" />
           </button>
           <div>
-            <h2 className="text-xl sm:text-4xl font-black gradient-text italic tracking-tighter uppercase leading-none">Workshop<span className="text-slate-900 dark:text-white not-italic">Labs</span></h2>
-            <p className="hidden sm:block text-slate-400 text-[8px] font-black uppercase tracking-[0.3em] mt-1">UGC Construction Toolset</p>
+            <h2 className="text-xl sm:text-4xl font-black gradient-text italic tracking-tighter uppercase leading-none">Work<span className="text-slate-900 dark:text-white not-italic">Shop</span></h2>
+            
           </div>
-        </div>
+      
         <div className="flex gap-2 sm:gap-3">
           <Button onClick={onCancel} variant="glass" size="sm" className="hidden sm:flex rounded-full px-4 text-xs">
-            <X size={16} className="mr-1" /> Discard
+            <X size={10} className="mr-1" /> Discard
           </Button>
-          <Button onClick={handlePublish} variant="primary" size="sm" className="rounded-full px-5 sm:px-8 text-xs sm:text-sm" disabled={!name || !logic}>
-            <Save size={18} className="mr-1.5" /> Publish
+          </div>
+          </div>
+          <Button onClick={handlePublish} variant="primary" size="xs" className="rounded-full px-4 sm:px-6 text-xs sm:text-sm" disabled={!name || !logic}>
+            <Save size={09} className="mr-1.5" /> Publish
           </Button>
         </div>
       </div>
